@@ -39,8 +39,7 @@ function closeNav() {
 				</div>
 			</div>
 			<div class = "title">
-				<h1>Welcome</h1>
-				<h4>Main Database</h4>
+				<h1>Sort by Title</h1>
 			</div>
 			<div class = "container">
 				<headers>
@@ -57,7 +56,15 @@ function closeNav() {
 					<?php
 						require "assessment_mysqli.php";
 					
-						$query = ("SELECT m.Filename, m.title, album.Album, a.artist, g.Genre, m.Track, m.Duration, m.Size FROM main As m INNER JOIN album ON m.Album_ID = album.Album_ID JOIN song_to_artist s ON m.Song_ID = s.Song_ID JOIN artist a ON a.Artist_PK = s.Artist_PK JOIN song_to_genre t ON m.Song_ID = t.Song_ID JOIN genre g ON g.Genre_PK = t.Genre_FK WHERE 1 ORDER BY m.title ASC");
+						$query = ("SELECT m.Song_ID, m.Filename, m.title, album.Album, a.artist, g.Genre, m.Track, m.Duration, m.Size 
+FROM main As m
+INNER JOIN album ON m.Album_ID = album.Album_ID
+JOIN song_to_artist s ON m.Song_ID = s.Song_ID
+JOIN artist a ON a.Artist_PK = s.Artist_PK
+JOIN song_to_genre t ON m.Song_ID = t.Song_ID
+JOIN genre g ON g.Genre_PK = t.Genre_FK
+WHERE 1
+ORDER BY m.title DESC, a.artist DESC");
 					
 					$result = mysqli_query($conn,$query);
 
@@ -83,4 +90,4 @@ function closeNav() {
 				<p>Copyright Statement</p>
 			</div>
 		</div>
-	</body>
+  </body>

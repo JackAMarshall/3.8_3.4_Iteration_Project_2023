@@ -12,7 +12,13 @@
 		<link rel = "stylesheet" href = "style3.css"/>
 	</head>
 	<body>
+		<img src = "images/background.jpg" alt = "Bacground Image" class = "background_image" />
 		<div class = "wrapper">
+			<div class = "nav">
+				<ul>
+					<li><a href = "admin.php">Admin Home</a></li>
+				</ul>
+			</div>
 			<div class = "title">
 				<h1>View Users</h1>
 			</div>

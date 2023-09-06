@@ -42,6 +42,7 @@
 	</head>
 	<body>
 		<login>
+		<img src = "images/background.jpg" alt = "Bacground Image" class = "background_image" />
 		<div class = "wrapper">
 			<div class = "nav">
 				<ul>
@@ -49,8 +50,8 @@
 				</ul>
 			</div>
 			<div class = "title_login">
-				<h1>Title</h1>
-				<h3>Sub-Header</h3>
+				<h1>Greames Music</h1>
+				<h3>The Greatest Tunes Return</h3>
 			</div>
 			<div class = "content">
 				<form method = "post" id= "login">
