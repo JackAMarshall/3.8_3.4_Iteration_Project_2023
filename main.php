@@ -12,6 +12,7 @@
 		<link rel = "stylesheet" href = "style3.css"/>
 	</head>
 	<body>
+		<img src = "images/background.jpg" alt = "Bacground Image" class = "background_image" />
 		<div class = "wrapper">
 			<div class = "nav">
 				<ul>
@@ -30,15 +31,16 @@ function closeNav() {
 				</ul>
 				<div id="mySidebar" class="sidebar">
 					<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-					<a href="#">Username</a>
-					<a href="#">"Username"</a>
-					<a href="#">Password</a>
-					<a href="#">"Password"</a>
+					<ul>
+						<li><a href = "main.php">Main Page</a></li>
+						<li><a href = "query_1.php">Sort By Title</a></li>
+						<li><a href = "query_2.php">Sort By Genre</a></li>
+					</ul>
 				</div>
 			</div>
 			<div class = "title">
 				<h1>Welcome</h1>
-				<h2>"Username"</h2>
+				<h4>Main Database</h4>
 			</div>
 			<div class = "container">
 				<headers>
