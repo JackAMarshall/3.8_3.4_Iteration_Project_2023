@@ -17,10 +17,15 @@
 			$count = mysqli_num_rows($result);
 		  
 			// If result matched $myusername and $mypassword, table row must be 1 row
-			if($count == 1) {
+			if($count == 1 and $myusername == "Graeme"){
 				$_SESSION['login_user'] = $myusername;
+				header("location: admin.php");
+			}
+		   if($count == 1 and $myusername != "Graeme"){
+			   $_SESSION['login_user'] = $myusername;
 				header("location: main.php");
-			} else {
+		   }
+		   else {
 				$error = "ERROR! Your Login Name or Password is invalid";
 				}
 			}
@@ -31,7 +36,7 @@
 <html lang="en">
 	<head>
 		<!--The meta data-->
-		<title>Greames Music</title>
+		<title>Graeme's Music</title>
 		<meta charset="UTF-8" />
 		<meta name="description" content="Website for Greames Music" />
 		<meta name="keywords" content="Greame, Music, Wesbite, Jack Marshall" />
@@ -42,15 +47,22 @@
 	</head>
 	<body>
 		<login>
+		<img src = "images/background.jpg" alt = "Bacground Image" class = "background_image" />
 		<div class = "wrapper">
-			<div class = "nav">
-				<ul>
-					<li><a href = "landing.php">Home</a></li>
-				</ul>
+			<div class = "nav-fixed">
+				<div class = "nav">
+					<h32>Graemes Music</h32>
+					<div class = "nav-buttons">
+						<ul>
+							<li><a href = "landing.php">Home</a></li>
+						</ul>
+					</div>
+				</div>
 			</div>
 			<div class = "title_login">
-				<h1>Title</h1>
-				<h3>Sub-Header</h3>
+				<h1>Graeme's Music</h1>
+				<h3>The Greatest Tunes Return</h3>
+				<p>Please use _ instead of spaces</p>
 			</div>
 			<div class = "content">
 				<form method = "post" id= "login">
@@ -58,10 +70,10 @@
 					<input type = "text" name = "password" placeholder="Enter user password"/><br />
 					<input type = "submit" value = " Log In "/><br />
 				</form>
-				<h3 class = "grey"><?php echo $error; ?></h3>
+				<h42 class = "grey"><?php echo $error; ?></h42>
 			</div>
 			<div class = "footer">
-				<p>Copyright Statement</p>
+				<p>©Jack Marshall 2023</p>
 			</div>
 		</div>
 		</login>
