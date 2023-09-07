@@ -1,4 +1,15 @@
+<?php
+        session_start();
+        if(!isset($_SESSION['login_user'])){
+                header("location:login.php");
+				}
+		else{
+			$User = $_SESSION['login_user'];
+        }
+?>
+
 <!DOCTYPE html>
+<?php error_reporting (E_ALL ^ E_NOTICE); ?> 
 <html lang="en">
 	<head>
 		<!--The meta data-->
@@ -14,54 +25,21 @@
 	<body>
 		<img src = "images/background.jpg" alt = "Bacground Image" class = "background_image" />
 		<div class = "wrapper">
-			<div class = "nav">
-				<ul>
-					<li><a href = "admin.php">Admin Home</a></li>
-				</ul>
+			<div class = "nav-fixed">
+				<div class = "nav">
+					<h32>Graemes Music</h32>
+					<div class = "nav-buttons">
+						<ul>
+							<li><a href = "admin.php">Admin Home</a></li>
+							<li><a href = "landing.php">Log Out</a></li>
+						</ul>
+					</div>
+				</div>
 			</div>
 			<div class = "title">
 				<h1>Edit Database</h1>
 			</div>
 			<div class = "content">
-				<!---------------------------------------------------------------------------------------------------------------------------------------->
-				<h2>Insert Into Main Databse</h2>
-				<form method = "post" id= "login">
-					<input type = "text" name = "title" placeholder="Title"/><br />
-					<input type = "text" name = "Album" placeholder="Album"/><br />
-					<input type = "text" name = "Genre" placeholder="Genre"/><br />
-					<input type = "text" name = "artist" placeholder="Artist"/><br />
-					<input type = "text" name = "Track" placeholder="Track"/><br />
-					<input type = "text" name = "Duration" placeholder="Duration"/><br />
-					<input type = "text" name = "Size" placeholder="Size"/><br />
-					<input type = "text" name = "Filename" placeholder="Filename"/><br />
-					<input type = "submit" value = " Update "/><br />
-				</form>
-				<?php
-				//connect.php (tells where to connect servername, username, password, dbaseName)
-				require "assessment_mysqli.php";
-
-				$title = $_POST["title"]; 
-				$album = $_POST["Album"];
-				$genre = $_POST["Genre"]; 
-				$artist = $_POST["artist"];
-				$track = $_POST["Track"]; 
-				$duration = $_POST["Duration"];
-				$size = $_POST["Size"]; 
-				$filename = $_POST["Filename"];
-
-				//create a variable to store sql code for the 'Add Users' query
-				$insertquery = "INSERT INTO main( title, track, duration, size, filename ) VALUES( '$title' , '$track' , '$duration' , '$size' , '$filename')";
-
-				if (mysqli_query($conn,$insertquery))
-				{
-					echo "<p class = 'grey'>Record inserted:</p>";
-				}
-				else
-				{
-					echo "<p class = 'grey'>Error inserting record:</p>";
-				}
-				?>
-				
 				<!---------------------------------------------------------------------------------------------------------------------------------------->
 				<h2>Delete User</h2>
 				<form method = "post" id= "delete">
@@ -124,25 +102,26 @@
 
 				<?php
 				require "assessment_mysqli.php";
-				print "<p class = 'grey'>Connected to server</p>";
 
 				$ExistingUserID = $_POST["ExistingUserName"]; 
 				$NewUserID = $_POST["NewUserName"]; 
 
-					//create a variable to store sql code for the 'Add Users' query
+				//create a variable to store sql code for the 'Add Users' query
 				$updatequery = "UPDATE user SET Username = '$NewUserID' WHERE Username = '$ExistingUserID'";
-				if (mysqli_query($conn,$updatequery))
+				
+				if (mysqli_query($conn,$insertquery))
 				{
-					echo "<h3>Record updated</h3>";
+					echo "<p class = 'grey'>Record inserted:</p>";
 				}
 				else
 				{
-					echo "<h3>Error updatinging record:</h3> ";
+					echo "<p class = 'grey'>Error inserting record:</p>";
 				}
 				?>
+				<!---------------------------------------------------------------------------------------------------------------------------------------->
 			</div>
 			<div class = "footer">
-				<p>Copyright Statement</p>
+				<p>©Jack Marshall 2023</p>
 			</div>
 		</div>
 	</body>

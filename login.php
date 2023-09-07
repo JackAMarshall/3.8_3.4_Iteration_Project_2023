@@ -17,11 +17,11 @@
 			$count = mysqli_num_rows($result);
 		  
 			// If result matched $myusername and $mypassword, table row must be 1 row
-			if($count == 1 and $myusername == "Graeme"){
+			if($myusername == "Graeme" or $myusername == "graeme" and $count == 1){
 				$_SESSION['login_user'] = $myusername;
 				header("location: admin.php");
 			}
-		   if($count == 1 and $myusername != "Graeme"){
+		   elseif($myusername != "Graeme" and $myusername != "graeme" and $count == 1){
 			   $_SESSION['login_user'] = $myusername;
 				header("location: main.php");
 		   }

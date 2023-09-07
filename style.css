@@ -57,6 +57,16 @@ h3{
 	text-shadow: 2px 2px #000000;
 }
 
+h32{
+	margin: 2.5vw;
+	line-height: 1vw;
+	color: white;
+	font-weight: bold;
+	font-size: 3vw;
+	font-family: Lexend, sans-serif;
+	text-shadow: 2px 2px #000000;
+}
+
 h4{ 
 	margin-left: 15vw;
 	line-height: 1vw;
@@ -93,7 +103,6 @@ li{
 }
 
 ul{
-	margin-left;
 	list-style-type: none; /*This bit of code removes the bullet points for the ul li*/
 }
 
@@ -101,6 +110,7 @@ ul{
 
 .wrapper{ /*the wrapper is the box that covers the whole window of the website all other components and inside it*/
 	height: auto;
+	min-height: 100%;
 	width: 100%;
 	background-color: #193bc790;
 	background-image: linear-gradient(#193bc760, #040b11 50vw);
@@ -120,14 +130,21 @@ html, body{
 	margin: 0;
 	padding-right: 1vw;
 	display: flex;
-	justify-content: right;
-	align-items: row;
-	transition: margin-left .5s; /* If you want a transition effect */
+	justify-content: space-between;
+	transition: margin-left .5s; /* A transition effect */
+}
+
+.nav-fixed{
+	position: fixed;
+	width: 100%;
+	height: auto;
+	background-image: linear-gradient(#193bc740, #193bc730 99% 10vw);
+	z-index: 2;
 }
 
 .nav ul{
 	list-style: none;
-	margin-top: 1vw;
+	margin-top: 1.2vw;
 	font-family: Calibri;
 	font-size: 2.5vw;
 	font-weight: 666;
@@ -143,12 +160,13 @@ html, body{
 	border-bottom: 0.3vw solid #999;
 	border-left: 0.1vw solid #ccc;
 	border-radius: 10vw;
-	background-color: #444;
+	background-color: #040b1195;
 }
 
 .nav ul li a {
 	color: #fff;
 	text-decoration: none;
+	text-shadow: 2px 2px #000000;
 }
 
 .nav ul li a:active{
@@ -210,7 +228,7 @@ input[type=text]{
 	margin-bottom: 2vh;
   	padding: 1vw;
   	border: 1px solid #ccc;
-	box-shadow: 0.2vw 0.2vw gray;
+	box-shadow: 0.2vw 0.2vw black;
   	resize: vertical;
 }
 
@@ -218,12 +236,12 @@ input[type=submit] {
   	background-color: #4CAF50;
 	margin-left: 15vw;
   	color: white;
-  	padding: 12px 20px;
+  	padding: 1vw 2vw;
   	border: none;
-  	border-radius: 4px;
+  	border-radius: 0.5vw;
   	cursor: pointer;
   	float: left;
-  	margin-right: 35px;
+  	margin-right: 2vw;
 }
 
 input[type=submit]:hover {
@@ -232,23 +250,23 @@ input[type=submit]:hover {
 
 /* The sidebar menu */
 .sidebar {
-  height: 100%; /* 100% Full-height */
-  width: 0; /* 0 width - change this with JavaScript */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Stay on top */
-  top: 0;
-  right: 0;
-	background-image: linear-gradient(blue, black 100vh);
-  overflow-x: hidden; /* Disable horizontal scroll */
-  padding-top: 60px; /* Place content 60px from the top */
-  transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
+  	height: 100%; /* 100% Full-height */
+  	width: 0; /* 0 width - change this with JavaScript */
+  	position: fixed; /* Stay in place */
+  	z-index: 1; /* Stay on top */
+  	top: 0;
+  	right: 0;
+	background-image: linear-gradient(#193bc7, #040b11 100vh);
+  	overflow-x: hidden; /* Disable horizontal scroll */
+  	padding-top: 60px; /* Place content 60px from the top */
+  	transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
 }
 
 /* The sidebar links */
 .sidebar a {
-	  padding: 8px 8px 8px 32px;
+	  padding: 0.8vw 0.8vw 0.8vw 0.8vw;
   text-decoration: none;
-  font-size: 25px;
+  font-size: 1.5vw;
   display: block;
   transition: 0.3s;
 }
@@ -261,18 +279,10 @@ input[type=submit]:hover {
 /* Position and style the close button (top right corner) */
 .sidebar{
   text-decoration: none;
-  font-size: 25px;
+  font-size: 1.5vw;
   color: black;
   display: block;
   transition: 0.3s;
-}
-
-.blur{
-  display: block;
-	background: transparent;
-  transition: 0.3s;
-	filter: blur(8px);
-  -webkit-filter: blur(8px);
 }
 
 /* The button used to open the sidebar */
@@ -281,7 +291,7 @@ input[type=submit]:hover {
   cursor: pointer;
   background-color: #111;
   color: white;
-  padding: 10px 15px;
+  padding: 1vw 1.5vw;
   border: none;
 }
 
@@ -290,35 +300,62 @@ input[type=submit]:hover {
 }
 
 .closebtn{
-  font-size: 20px;
   cursor: pointer;
   background-color: #111;
   color: white;
-  padding: 10px 15px;
+  padding: 1vw 1.5vw;
   border: none;
 }
 
 .footer{
 	background-color: none;
-	padding: 4vw;
+	padding: 2vw;
 }
 
 .grid{
-	height: 100vh;
 	width: 100%;
 	display: flex;
-	justify-content: space-around;
+	justify-content: space-evenly;
 	align-items: center;
 }
 
 .grid-button{
-	height: 40vh;
-	width: 40vh;
+	height: 20vw;
+	width: 30vw;
 	background-color: transparent;
 	border: 1vw solid #aaa;
 	border-radius: 2em;
 	margin: 0;
+	background-color: #040b1170;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+
+.grid a button{
+	margin-left: 3wv;
+	margin-right: 3vw;
+	margin-top: 1vw; 
+	margin-bottom: 1vw;
+	line-height: 1vw;
+	color: white;
+	font-weight: bold;
+	font-size: 1.8vw;
+	font-family: ABeeZee, sans-serif;
+	text-shadow: 2px 2px #000000;
+}
+
+.grid a button:active{
+	color:#fce;
+}
+
+.grid a button:hover{
+	color:#fce;
+	width: 30.1vw;
+	font-size: 1.81vw;
+}
+
+.grid a button:visited{
+	color:#cfc;
+} 
 
 .background_image{
 	width: 100%;

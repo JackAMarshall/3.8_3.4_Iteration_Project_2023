@@ -1,3 +1,13 @@
+<?php
+        session_start();
+        if(!isset($_SESSION['login_user'])){
+                header("location:login.php");
+				}
+		else{
+			$User = $_SESSION['login_user'];
+        }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -14,28 +24,34 @@
 	<body>
 		<img src = "images/background.jpg" alt = "Bacground Image" class = "background_image" />
 		<div class = "wrapper">
-			<div class = "nav">
-				<ul>
-					<button class="openbtn" onclick="openNav()">&#9776;</button>
-					<script>
-function openNav() {
-  document.getElementById("mySidebar").style.width = "20vw";
-  document.getElementById("main").style.marginRight = "20vw";
-}
+			<div class = "nav-fixed">
+				<div class = "nav">
+					<h32>Graemes Music</h32>
+					<div class = "nav-buttons">
+						<ul>
+							<button class="openbtn" onclick="openNav()">&#9776;</button>
+							<script>
+								function openNav() {
+									document.getElementById("mySidebar").style.width = "20vw";
+									document.getElementById("main").style.marginRight = "20vw";
+								}
 
-function closeNav() {
-  document.getElementById("mySidebar").style.width = "0";
-  document.getElementById("main").style.marginRight= "0";
-}
-</script>
-				</ul>
-				<div id="mySidebar" class="sidebar">
-					<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-					<ul>
-						<li><a href = "main.php">Main Page</a></li>
-						<li><a href = "query_1.php">Sort By Title</a></li>
-						<li><a href = "query_2.php">Sort By Genre</a></li>
-					</ul>
+								function closeNav() {
+									document.getElementById("mySidebar").style.width = "0";
+									document.getElementById("main").style.marginRight= "0";
+								}
+							</script>
+						</ul>
+						<div id="mySidebar" class="sidebar">
+							<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+							<ul>
+								<li><a href = "main.php">Main Page</a></li>
+								<li><a href = "query_1.php">Sort By Title</a></li>
+								<li><a href = "query_2.php">Sort By Genre</a></li>
+								<li><a href = "landing.php">Log Out</a></li>
+							</ul>
+						</div>
+					</div>
 				</div>
 			</div>
 			<div class = "title">
@@ -46,8 +62,8 @@ function closeNav() {
 				<headers>
 					<Title1><h42>Title</h42></Title1>
 					<Album1><h42>Album</h42></Album1>
-					<Genre1><h42>Artist</h42></Genre1>
-					<Artist1><h42>Genre</h42></Artist1>
+					<Genre1><h42>Genre</h42></Genre1>
+					<Artist1><h42>Artist</h42></Artist1>
 					<Track1><h42>Track</h42></Track1>
 					<Duration1><h42>Duration</h42></Duration1>
 					<Size1><h42>Size</h42></Size1>
@@ -80,7 +96,7 @@ function closeNav() {
 				</content>
 			</div>
 			<div class = "footer">
-				<p>Copyright Statement</p>
+				<p>©Jack Marshall 2023</p>
 			</div>
 		</div>
 	</body>

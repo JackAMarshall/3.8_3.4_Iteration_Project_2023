@@ -1,3 +1,13 @@
+<?php
+        session_start();
+        if(!isset($_SESSION['login_user'])){
+                header("location:login.php");
+				}
+		else{
+			$User = $_SESSION['login_user'];
+        }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -14,20 +24,30 @@
 	<body>
 		<img src = "images/background.jpg" alt = "Bacground Image" class = "background_image" />
 		<div class = "wrapper">
+			<div class = "nav-fixed">
+				<div class = "nav">
+					<h32>Graemes Music</h32>
+					<div class = "nav-buttons">
+						<ul>
+							<li><a href = "landing.php">Log Out</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class = "title_login">
+				<h1>Graeme's Music</h1>
+				<h3>The Greatest Tunes Return</h3>
+			</div>
 			<div class = "grid">
 				<a href = "view_users.php">
-					<button class = "grid-button">
-						<h42>View Users</h42>
-					</button>
+					<button class = "grid-button">View Users</button>
 				</a>
 				<a href = "edit_database.php">
-					<button class = "grid-button">
-						<h42>Edit Database</h42>
-					</button>
+					<button class = "grid-button">Edit Database</button>
 				</a>
 			</div>
 			<div class = "footer">
-				<p>Copyright Statement</p>
+				<p>©Jack Marshall 2023</p>
 			</div>
 		</div>
 	</body>
