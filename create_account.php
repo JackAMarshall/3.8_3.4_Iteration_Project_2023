@@ -44,10 +44,15 @@
 		<login>
 		<img src = "images/background.jpg" alt = "Bacground Image" class = "background_image" />
 		<div class = "wrapper">
-			<div class = "nav">
-				<ul>
-					<li><a href = "landing.php">Home</a></li>
-				</ul>
+			<div class = "nav-fixed">
+				<div class = "nav">
+					<h32>Graemes Music</h32>
+					<div class = "nav-buttons">
+						<ul>
+							<li><a href = "landing.php">Home</a></li>
+						</ul>
+					</div>
+				</div>
 			</div>
 			<div class = "title_login">
 				<h1>Greames Music</h1>
@@ -82,7 +87,7 @@
 				<h3 class = "grey"><?php echo $error; ?></h3>
 			</div>
 			<div class = "footer">
-				<p>Copyright Statement</p>
+				<p>©Jack Marshall 2023</p>
 			</div>
 		</div>
 		</login>
