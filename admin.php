@@ -12,6 +12,7 @@
 		<link rel = "stylesheet" href = "style3.css"/>
 	</head>
 	<body>
+		<img src = "images/background.jpg" alt = "Bacground Image" class = "background_image" />
 		<div class = "wrapper">
 			<div class = "grid">
 				<a href = "view_users.php">
