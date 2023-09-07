@@ -1,3 +1,13 @@
+<?php
+        session_start();
+        if(!isset($_SESSION['login_user'])){
+                header("location:login.php");
+				}
+		else{
+			$User = $_SESSION['login_user'];
+        }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -12,7 +22,19 @@
 		<link rel = "stylesheet" href = "style3.css"/>
 	</head>
 	<body>
+		<img src = "images/background.jpg" alt = "Bacground Image" class = "background_image" />
 		<div class = "wrapper">
+			<div class = "nav-fixed">
+				<div class = "nav">
+					<h32>Graemes Music</h32>
+					<div class = "nav-buttons">
+						<ul>
+							<li><a href = "admin.php">Admin Home</a></li>
+							<li><a href = "landing.php">Log Out</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
 			<div class = "title">
 				<h1>View Users</h1>
 			</div>
@@ -42,7 +64,7 @@
 				</content>
 			</div>
 			<div class = "footer">
-				<p>Copyright Statement</p>
+				<p>©Jack Marshall 2023</p>
 			</div>
 		</div>
 	</body>
